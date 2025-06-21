@@ -341,7 +341,7 @@ th, td{
 .slider-section img{
     width: 100%;  /*100%*/
     height: 100%; /*100%*/
-    object-fit:  cover; /*no van a perder la calidad*/
+    object-fit:  fill; /*no van a perder la calidad*/
     border-radius: 30px;
 }
 
