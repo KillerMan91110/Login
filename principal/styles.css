@@ -506,6 +506,7 @@ th, td{
 .icon-1 {
     flex-basis: calc(33.3% - 150px);
     display: flex;
+    box-shadow: #000000;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
