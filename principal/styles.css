@@ -20,7 +20,7 @@ body{
     /* height: 100vh;*/
     background: #ffffff;
     /* background:  linear-gradient(to left, #859398, #283048); */
-    background-image: url(../img/fondo_principal_new.png);
+    background-image: url(../principal/img/fondo_principal_new.png);
     background-repeat: repeat-y;
     background-size: 600px auto;
     background-attachment: fixed;
