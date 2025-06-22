@@ -43,3 +43,78 @@ function moveToRight() {
     slider.style.transform =  `translate(-${operacion}%)`
     slider.style.transition = "all ease .6s"
 }
+function abrirModalOlvidoContrasena() {
+  const iniciarSesionModalEl = document.getElementById('IniciarSesion');
+  const iniciarSesionModal = bootstrap.Modal.getInstance(iniciarSesionModalEl) 
+                           || new bootstrap.Modal(iniciarSesionModalEl);
+  iniciarSesionModal.hide();
+
+  const modalOlvidoEl = document.getElementById('ContraseñaOlvi');
+  const modalOlvido = bootstrap.Modal.getInstance(modalOlvidoEl)
+                     || new bootstrap.Modal(modalOlvidoEl);
+  modalOlvido.show();
+}
+
+
+function validarRegistro(event) {
+  const pass = document.getElementById("registroContra").value.trim();
+  const confirmar = document.getElementById("confirmarContra").value.trim();
+
+  if (!pass || !confirmar) {
+    alert("Por favor, complete ambos campos de contraseña.");
+    event.preventDefault();
+    return false;
+  }
+
+  if (pass !== confirmar) {
+    alert("Las contraseñas no coinciden.");
+    event.preventDefault();
+    return false;
+  }
+
+  return true;
+}
+
+function showAlert(message, type = 'success') {
+  const alertHTML = `
+    <div id="alertaTemporal" class="alert alert-${type} alert-dismissible fade show" role="alert">
+      ${message}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>`;
+  
+  const container = document.getElementById('alertContainer');
+  if (!container) return;
+  container.innerHTML = alertHTML;
+
+  setTimeout(() => {
+    const alertElem = document.getElementById('alertaTemporal');
+    if (alertElem) {
+      alertElem.classList.remove('show');
+      alertElem.classList.add('hide');
+    }
+  }, 3000);
+}
+
+
+document.querySelector('#IniciarSesion form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const modal = bootstrap.Modal.getInstance(document.getElementById('IniciarSesion'));
+    modal.hide();
+  showAlert('Inicio de sesión exitoso.');
+});
+
+document.querySelector('#ContraseñaOlvi form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const modal = bootstrap.Modal.getInstance(document.getElementById('ContraseñaOlvi'));
+    modal.hide();
+  showAlert('Se envió un enlace de restablecimiento a su correo.');
+});
+
+document.querySelector('#CrearCuentaModal form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (validarRegistro(e)) {
+    const modal = bootstrap.Modal.getInstance(document.getElementById('CrearCuentaModal'));
+    modal.hide();
+    showAlert('Cuenta registrada con éxito.');
+  }
+});

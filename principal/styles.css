@@ -103,7 +103,7 @@ img{
     display: none;
 }
 
-label{
+label.drawer{
     cursor: pointer;
     display: none;
 }
@@ -506,7 +506,7 @@ th, td{
 .icon-1 {
     flex-basis: calc(33.3% - 150px);
     display: flex;
-    box-shadow: #000000;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     align-items: center;
     justify-content: space-between;
     padding: 20px;
@@ -618,8 +618,8 @@ th, td{
         margin: 0;
     }
 
-    label{
-        display: initial ;
+    label.drawer{
+        display: inline-block ;
     }
 
     .menu-box{
@@ -712,4 +712,21 @@ th, td{
         width: 100%;
         margin-bottom: 20px;
     }
+}
+
+/* Estilos para los modal */
+    #IniciarSesion, #ContraseñaOlvi, #CrearCuentaModal {
+        font-family: "Arima", system-ui;
+    }
+
+    #IniciarSesion h1, #IniciarSesion h2, #IniciarSesion h3, #IniciarSesion h4, #IniciarSesion h5, #IniciarSesion h6,
+    #ContraseñaOlvi h1, #ContraseñaOlvi h2, #ContraseñaOlvi h3, #ContraseñaOlvi h4, #ContraseñaOlvi h5, #ContraseñaOlvi h6,
+    #CrearCuentaModal h1, #CrearCuentaModal h2, #CrearCuentaModal h3, #CrearCuentaModal h4, #CrearCuentaModal h5, #CrearCuentaModal h6 {
+        font-family: "Fredoka", sans-serif;
+    }
+
+    #IniciarSesion label, #IniciarSesion p, 
+    #ContraseñaOlvi label, #ContraseñaOlvi p, 
+    #CrearCuentaModal label, #CrearCuentaModal p {
+        font-family: "Arima", system-ui;
 }
