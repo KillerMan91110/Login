@@ -316,14 +316,16 @@ th, td{
 /*Carrusel de Imagenes*/
 
 .container-carrusel{
-    margin: 0 auto;
-    margin-top: 120px;
-    width: 1200px; /*1200px cambiar al actual*/ 
-    height: 500px; /*500px*/
+    margin: 120px auto 0 auto; 
+    max-width: 1200px;  
+    width: 100%;
+    height: auto; 
+    aspect-ratio: 16 / 6;
     background-color: #e0e0e0;
     box-shadow: 0 8px 50px 0 rgba(0, 0, 0 , 0.85);
     border-radius: 30px;
     overflow: hidden;
+    position: relative;
 }
 
 .carruseles{
@@ -358,7 +360,7 @@ th, td{
     font-weight: 600;
     cursor: pointer;
     color: #0f060681;
-    transform:  translate(0, -50%);
+    transform:  translateY(-50%);
     transition: .5s ease;
     user-select: none;
 }
