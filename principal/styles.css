@@ -652,6 +652,13 @@ th, td{
         display: none;
     }
 
+/*Carrusel de Imagenes*/
+    .container-carrusel{
+        margin: 110px auto 0 auto;
+        width: 90%;
+        aspect-ratio:  16 / 8;
+    }
+
 /*Carrito de Compra*/
     .submenu:hover #carrito{
         min-width: 100%;
