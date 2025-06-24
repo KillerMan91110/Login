@@ -659,6 +659,14 @@ th, td{
         aspect-ratio:  16 / 8;
     }
 
+    .btn-left{
+        left: 10px;
+    }
+
+    .btn-right{
+        right: 10px;
+    }
+
 /*Carrito de Compra*/
     .submenu:hover #carrito{
         min-width: 100%;
