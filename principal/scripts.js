@@ -118,3 +118,30 @@ document.querySelector('#CrearCuentaModal form')?.addEventListener('submit', fun
     showAlert('Cuenta registrada con éxito.');
   }
 });
+
+/*********** ***script para el modal de registro ************/
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) Creamos un contenedor vacío dentro del body
+  const container = document.getElementById('modals-container');
+
+  // 2) Cargamos el login.html
+  fetch('../login.html')
+    .then(resp => {
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      return resp.text();
+    })
+    .then(html => {
+      // 3) Parseamos ese HTML en un template
+      const tmp = document.createElement('template');
+      tmp.innerHTML = html;
+
+      // 4) Extraemos todos los divs con class="modal" y los pegamos al container
+      tmp.content.querySelectorAll('.modal').forEach(modal => {
+        container.appendChild(modal);
+      });
+    })
+    .catch(err => {
+      console.error('No se pudo cargar el modal de login:', err);
+    });
+});
+
